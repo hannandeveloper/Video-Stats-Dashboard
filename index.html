@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="src/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
-<body>
+
+<body class=" flex items-center justify-center  flex-col ">
     <nav>
-        
+        <p>this is nav bar</p>
+        <i class="ri-menu-line"></i>
     </nav>
+    <main class="bg-slate-400 flex flex-col items-center rounded-2xl m-52  w-[50%]">
+        <input id="url1" type="text" placeholder="Enter URL1" required="" class="w-[80%] mt-5 p-4 rounded-md">
+        <input id="url2" type="text" placeholder="Enter URL2" required="" class="w-[80%] mt-5 p-4 rounded-md">
+        <button id="URLsubmit" class="cursor-pointer bg-white w-32 m-3 h-9  rounded-md hover:bg-green-500 ">Enter <i
+                class="ri-arrow-right-line"></i></button>
+    </main>
+    <script src="index.js"></script>
 </body>
+
 </html>
