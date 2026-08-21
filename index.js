@@ -34,21 +34,29 @@ URLbtn.addEventListener("click", async () => {
     tagDiv.textContent = `Tags  : ${ytInfo.items[0].snippet.tags}`
     // add views count 
     const viewsDiv = document.createElement("div")
-    viewsDiv.textContent = `Views  : ${ytInfo.items[0].statistics.viewCount}`
+    let viCount = ytInfo.items[0].statistics.viewCount
+    viewsDiv.textContent = `Views  : ${viCount}`
     // add likes count 
     const likesDiv = document.createElement("div")
-    likesDiv.textContent = `Likes  : ${ytInfo.items[0].statistics.likeCount}`
+    let liCount = ytInfo.items[0].statistics.likeCount
+    likesDiv.textContent = `Likes  : ${liCount}`
     // add comments count 
     const commentDiv = document.createElement("div")
-    commentDiv.textContent = `Comments  : ${ytInfo.items[0].statistics.commentCount}`
+    let comCount = ytInfo.items[0].statistics.commentCount
+    commentDiv.textContent = `Comments  : ${comCount}`
+    // add engagement rate 
+    const engagementRate = ((Number(liCount) + Number(comCount)) / Number(viCount)) * 100
+    const engagementDiv = document.createElement("div")
+    engagementDiv.textContent = `Enagagement Rate : ${engagementRate.toFixed(2)}%`
 
-    vid1.append(titleDiv, thumbDiv, channelDiv, tagDiv, viewsDiv, likesDiv, commentDiv)
+    vid1.append(titleDiv, thumbDiv, channelDiv, tagDiv, viewsDiv, likesDiv, commentDiv , engagementDiv)
     if (needDes.checked == true) {
         // add description  
         const desDiv = document.createElement("div")
         desDiv.textContent = `Description: ${ytInfo.items[0].snippet.description}`
         vid1.append(desDiv)
     }
+    url1.value = ""
 })
 
 // https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails,status,player&id=ls69oPi10iU&key=AIzaSyBR1hpK3fPOc9u3adkjIsZX3a3LrIKIDe4
