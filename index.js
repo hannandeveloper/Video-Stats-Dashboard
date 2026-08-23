@@ -4,6 +4,9 @@ const URLbtn = document.querySelector('#URLsubmit')
 const vid1 = document.querySelector(".video1")
 const needDes = document.querySelector("#needDescription")
 
+
+
+
 function getYouTubeVideoId(url) {
     // Regex pattern matching standard, shortened, embed, and shorts YouTube links
     const regExp = /^.*(?:youtu\.be\/|v\/|u\/\w\/|embed\/|shorts\/|watch\?v=|&v=)([^#&?]*).*/;
@@ -51,11 +54,13 @@ async function getData() {
         // add comments count 
         const commentDiv = document.createElement("div")
         let comCount = id.statistics.commentCount
-        commentDiv.textContent = `Comments  : ${comCount}`
+        commentDiv.textContent = `Comments  : ${comCount.toLocaleString()}`
         // add engagement rate 
         const engagementRate = ((Number(liCount) + Number(comCount)) / Number(viCount)) * 100
         const engagementDiv = document.createElement("div")
         engagementDiv.textContent = `Enagagement Rate : ${engagementRate.toFixed(2)}%`
+
+
 
         vid1.append(channelDiv, titleDiv, thumbDiv, tagDiv, viewsDiv, likesDiv, commentDiv, engagementDiv)
         if (needDes.checked == true) {
@@ -64,12 +69,62 @@ async function getData() {
             desDiv.textContent = `Description: ${id.snippet.description}`
             vid1.append(desDiv)
         }
+        // Call the external chart function
 
+        const canvas1 = document.createElement("canvas")
+        createMetricsChart(canvas1, viCount, liCount, comCount);
+              vid1.append(canvas1)
+              
+      
     });
-
     url1.value = ""
     url2.value = ""
 }
 
+// Extracted Helper Function for Chart Integration
+// Function ko updated parameters dein
+function createMetricsChart(canvasElement, viCount, liCount, comCount) {
+    // Check karein agar is canvas par pehle se chart exist karta hai
+    const existingChart = Chart.getChart(canvasElement);
+    if (existingChart) {
+        existingChart.destroy(); // Purana chart destroy karein
+    }
 
-// https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails,status,player&id=ls69oPi10iU&key=AIzaSyBR1hpK3fPOc9u3adkjIsZX3a3LrIKIDe4
+    return new Chart(canvasElement, {
+        type: 'bar',
+        data: {
+            labels: ['Views', 'Likes', 'Comments'],
+            datasets: [{
+                label: 'Video Metrics',
+                data: [viCount, liCount, comCount],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(255, 206, 86, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(255, 206, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: 'Statistics Overview'
+                }
+            },
+            scales: {
+                y: {
+                    type: 'logarithmic',
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
