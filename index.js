@@ -29,53 +29,61 @@ async function getData() {
     let ytInfo = await info.json()
 
     ytInfo.items.forEach(id => {
+        const sectionForEach = document.createElement("section")
+        sectionForEach.className = "sm:w-2/5 w-[80%] flex item-center flex-col justify-center m-8 sm:m-20 border-2 border-[#C8A96B] p-2 rounded-lg"
         // add channel title 
         const channelDiv = document.createElement("div")
-        channelDiv.textContent = `Channel Title: ${id.snippet.channelTitle}`
-        channelDiv.classList.add("text-2xl")
+        channelDiv.textContent = `Channel Title:  ${id.snippet.channelTitle}`
+        channelDiv.className= "text-2xl  text-[#F7F4ED] p-4"
         // add title 
         const titleDiv = document.createElement("div")
         titleDiv.textContent = `Title  : ${id.snippet.title}  `
-        titleDiv.classList.add("text-2xl")
+        titleDiv.className = "text-[#F7F4ED] p-4"
         // add thumbnails 
         const thumbDiv = document.createElement("img")
-        thumbDiv.src = id.snippet.thumbnails.medium.url
+        thumbDiv.src = id.snippet.thumbnails.maxres.url
         // add tags 
         const tagDiv = document.createElement("div")
         tagDiv.textContent = `Tags  : ${id.snippet.tags}`
+        tagDiv.className = "text-[#F7F4ED] p-4"
         // add views count 
         const viewsDiv = document.createElement("div")
         let viCount = id.statistics.viewCount
         viewsDiv.textContent = `Views  : ${viCount}`
+        viewsDiv.className = "text-[#F7F4ED] p-4"
         // add likes count 
         const likesDiv = document.createElement("div")
         let liCount = id.statistics.likeCount
         likesDiv.textContent = `Likes  : ${liCount}`
+        likesDiv.className = " text-[#F7F4ED] p-4"
         // add comments count 
         const commentDiv = document.createElement("div")
         let comCount = id.statistics.commentCount
         commentDiv.textContent = `Comments  : ${comCount.toLocaleString()}`
+        commentDiv.className = "text-[#F7F4ED] p-4"
         // add engagement rate 
         const engagementRate = ((Number(liCount) + Number(comCount)) / Number(viCount)) * 100
         const engagementDiv = document.createElement("div")
         engagementDiv.textContent = `Enagagement Rate : ${engagementRate.toFixed(2)}%`
+engagementDiv.className="text-[#F7F4ED] p-4"
 
 
-
-        vid1.append(channelDiv, titleDiv, thumbDiv, tagDiv, viewsDiv, likesDiv, commentDiv, engagementDiv)
+        sectionForEach.append(channelDiv, titleDiv, thumbDiv, tagDiv, viewsDiv, likesDiv, commentDiv, engagementDiv)
         if (needDes.checked == true) {
             // add description  
             const desDiv = document.createElement("div")
             desDiv.textContent = `Description: ${id.snippet.description}`
-            vid1.append(desDiv)
+            sectionForEach.append(desDiv)
+            desDiv.className="text-[#F7F4ED] p-4"
         }
         // Call the external chart function
 
         const canvas1 = document.createElement("canvas")
         createMetricsChart(canvas1, viCount, liCount, comCount);
-              vid1.append(canvas1)
-              
-      
+
+        sectionForEach.append(canvas1)
+
+        vid1.append(sectionForEach)
     });
     url1.value = ""
     url2.value = ""
@@ -98,33 +106,43 @@ function createMetricsChart(canvasElement, viCount, liCount, comCount) {
                 label: 'Video Metrics',
                 data: [viCount, liCount, comCount],
                 backgroundColor: [
-                    'rgba(54, 162, 235, 0.7)',
-                    'rgba(255, 99, 132, 0.7)',
-                    'rgba(255, 206, 86, 0.7)'
+                    'rgb(200, 169, 107)',
+                    'rgb(200, 169, 107)',
+                    'rgb(200, 169, 107)'
                 ],
                 borderColor: [
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(255, 206, 86, 1)'
+                    'rgb(247, 244, 237)',
+                    'rgb(247, 244, 237)',
+                    'rgb(247, 244, 237)'
                 ],
-                borderWidth: 1
+                borderWidth: 2
             }]
         },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: { display: false },
-                title: {
-                    display: true,
-                    text: 'Statistics Overview'
-                }
-            },
-            scales: {
-                y: {
-                    type: 'logarithmic',
-                    beginAtZero: true
-                }
-            }
+  options: {
+    responsive : "true",
+    color: '#ffffff', // <-- This changes all text: labels, ticks, legend, title
+    plugins: {
+      legend: {
+        labels: {
+          color: '#ffffff' // legend text
         }
-    });
+      },
+      title: {
+        display: true,
+        text: 'My Chart',
+        color: '#C8A96B' // title text
+      }
+    },
+    scales: {
+      x: {
+        ticks: { color: '#F7F4ED' }, // x-axis numbers/labels
+        grid: { color: 'rgba(255,255,255,0.1)' }
+      },
+      y: {
+        ticks: { color: '#F7F4ED' }, // y-axis numbers
+        grid: { color: 'rgba(255,255,255,0.1)' }
+      }
+    }
+  }
+});
 }
