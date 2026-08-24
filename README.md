@@ -4,7 +4,7 @@ A minimal, fast web page to compare video performance and visualize key metrics 
 
 Built with: `HTML` `Tailwind CSS` `Chart.js` `Vanilla JS`
 
-## ✨ Features
+##  Features
 
 - **Video Stats Comparison**  
   Compare multiple videos side by side. Add `Views`, `Likes`, `Comments` and see which video performed better instantly.
@@ -24,7 +24,7 @@ Built with: `HTML` `Tailwind CSS` `Chart.js` `Vanilla JS`
 
 
 
-## 🚀 Tech Stack
+## Tech Stack
 | Tech | Purpose |
 | --- | --- |
 | Tailwind CSS | Styling + Minimal UI |
