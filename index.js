@@ -16,7 +16,10 @@ function getYouTubeVideoId(url) {
   return (match && match[1].length === 11) ? match[1] : null;
 }
 
+
 URLbtn.addEventListener("click", () => {
+ const arrow = document.querySelector(".downArrow")
+ arrow.style.visibility= "visible"
   getData()
 })
 
