@@ -4,6 +4,11 @@ A minimal, fast web page to compare video performance and visualize key metrics 
 
 Built with: `HTML` `Tailwind CSS` `Chart.js` `Vanilla JS`
 
+---
+>  **Check out the live application here:** [View ](https://videos-stats-dashboard.netlify.app/)
+
+---
+
 ##  Features
 
 - **Video Stats Comparison**  
@@ -21,8 +26,8 @@ Built with: `HTML` `Tailwind CSS` `Chart.js` `Vanilla JS`
   Easily add more metrics like `Shares`, `Watch Time`, `CTR` to the dataset.
 - **Lightweight & Fast**  
   No frameworks needed. Pure JS + Tailwind CDN. Loads in under 1 second.
-
-
+-**Dark mode**
+   Dark mode button is available.
 
 ## Tech Stack
 | Tech | Purpose |
