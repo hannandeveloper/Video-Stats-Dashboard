@@ -33,42 +33,42 @@ async function getData() {
 
   ytInfo.items.forEach(id => {
     const sectionForEach = document.createElement("section")
-    sectionForEach.className = "sm:w-2/5 w-[80%] flex item-center flex-col justify-center m-8 sm:m-20 border-2 border-[#C8A96B] p-2 rounded-lg"
+    sectionForEach.className = "sm:w-2/5 w-[80%] flex item-center flex-col justify-center m-8 sm:m-20 border-2 border-[var(--accent-color)] p-2 rounded-lg"
     // add channel title 
     const channelDiv = document.createElement("div")
     channelDiv.textContent = `Channel Title:  ${id.snippet.channelTitle}`
-    channelDiv.className = "text-2xl  text-[#F7F4ED] p-4"
+    channelDiv.className = "text-2xl  text-[var(--text-color)] p-4"
     // add title 
     const titleDiv = document.createElement("div")
     titleDiv.textContent = `Title  : ${id.snippet.title}  `
-    titleDiv.className = "text-[#F7F4ED] p-4"
+    titleDiv.className = "text-[var(--text-color)] p-4"
     // add thumbnails 
     const thumbDiv = document.createElement("img")
     thumbDiv.src = id.snippet.thumbnails.maxres.url
     // add tags 
     const tagDiv = document.createElement("div")
     tagDiv.textContent = `Tags  : ${id.snippet.tags}`
-    tagDiv.className = "text-[#F7F4ED] p-4"
+    tagDiv.className = "text-[var(--text-color)] p-4"
     // add views count 
     const viewsDiv = document.createElement("div")
     let viCount = id.statistics.viewCount
     viewsDiv.textContent = `Views  : ${viCount}`
-    viewsDiv.className = "text-[#F7F4ED] p-4"
+    viewsDiv.className = "text-[var(--text-color)] p-4"
     // add likes count 
     const likesDiv = document.createElement("div")
     let liCount = id.statistics.likeCount
     likesDiv.textContent = `Likes  : ${liCount}`
-    likesDiv.className = " text-[#F7F4ED] p-4"
+    likesDiv.className = " text-[var(--text-color)] p-4"
     // add comments count 
     const commentDiv = document.createElement("div")
     let comCount = id.statistics.commentCount
     commentDiv.textContent = `Comments  : ${comCount.toLocaleString()}`
-    commentDiv.className = "text-[#F7F4ED] p-4"
+    commentDiv.className = "text-[var(--text-color)] p-4"
     // add engagement rate 
     const engagementRate = ((Number(liCount) + Number(comCount)) / Number(viCount)) * 100
     const engagementDiv = document.createElement("div")
     engagementDiv.textContent = `Enagagement Rate : ${engagementRate.toFixed(2)}%`
-    engagementDiv.className = "text-[#F7F4ED] p-4"
+    engagementDiv.className = "text-[var(--text-color)] p-4"
 
 
     sectionForEach.append(channelDiv, titleDiv, thumbDiv, tagDiv, viewsDiv, likesDiv, commentDiv, engagementDiv)
@@ -77,7 +77,7 @@ async function getData() {
       const desDiv = document.createElement("div")
       desDiv.textContent = `Description: ${id.snippet.description}`
       sectionForEach.append(desDiv)
-      desDiv.className = "text-[#F7F4ED] p-4"
+      desDiv.className = "text-[var(--text-color)] p-4"
     }
     // Call the external chart function
 

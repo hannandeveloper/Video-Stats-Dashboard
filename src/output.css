@@ -582,6 +582,10 @@ video {
   margin-top: 1.25rem;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
 .flex {
   display: flex;
 }
@@ -680,19 +684,36 @@ video {
   border-color: rgb(200 169 107 / var(--tw-border-opacity, 1));
 }
 
-.bg-\[\#8FA28A\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(143 162 138 / var(--tw-bg-opacity, 1));
+.border-\[\] {
+  border-color: ;
 }
 
-.bg-\[\#C7D3C0\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(199 211 192 / var(--tw-bg-opacity, 1));
+.border-\[var\(\)\] {
+  border-color: var();
 }
 
-.bg-\[\#C8A96B\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(200 169 107 / var(--tw-bg-opacity, 1));
+.border-\[var\(--\)\] {
+  border-color: var(--);
+}
+
+.border-\[var\(--accent\)\] {
+  border-color: var(--accent);
+}
+
+.border-\[var\(--accent-color\)\] {
+  border-color: var(--accent-color);
+}
+
+.bg-\[var\(--accent-color\)\] {
+  background-color: var(--accent-color);
+}
+
+.bg-\[var\(--primary-color\)\] {
+  background-color: var(--primary-color);
+}
+
+.bg-\[var\(--secondary-color\)\] {
+  background-color: var(--secondary-color);
 }
 
 .p-2 {
@@ -718,8 +739,52 @@ video {
   color: rgb(247 244 237 / var(--tw-text-opacity, 1));
 }
 
+.text-\[var\(--text-color\)\] {
+  color: var(--text-color);
+}
+
+.text-\[\#\] {
+  color: #;
+}
+
+.text-\[var\] {
+  color: var;
+}
+
+.text-\[var\(\)\] {
+  color: var();
+}
+
+.text-\[var\(--\)\] {
+  color: var(--);
+}
+
+.text-\[var\(--text\)\] {
+  color: var(--text);
+}
+
+.text-\[\] {
+  color: ;
+}
+
 .accent-\[\#C8A96B\] {
   accent-color: #C8A96B;
+}
+
+.accent-\[\] {
+  accent-color: ;
+}
+
+.accent-\[var\(\)\] {
+  accent-color: var();
+}
+
+.accent-\[var\(--accent\)\] {
+  accent-color: var(--accent);
+}
+
+.accent-\[var\(--accent-color\)\] {
+  accent-color: var(--accent-color);
 }
 
 .outline-none {
@@ -727,9 +792,15 @@ video {
   outline-offset: 2px;
 }
 
-.hover\:bg-\[\#a38852\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(163 136 82 / var(--tw-bg-opacity, 1));
+:root {
+  --primary-color :#8FA28A;
+  --secondary-color : #C7D3C0;
+  --accent-color : #C8A96B;
+  --text-color : #F7F4ED;
+}
+
+.hover\:bg-\[var\(--accent-color\)\]:hover {
+  background-color: var(--accent-color);
 }
 
 @media (min-width: 640px) {
