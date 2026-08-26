@@ -727,15 +727,34 @@ video {
 }
 
 :root {
-  --primary-color :#8FA28A;
-  --secondary-color : #C7D3C0;
-  --accent-color : #C8A96B;
-  --text-color : #F7F4ED;
+  /* Light mode */
+  --primary-color: #8FA28A;
+  /* Sage */
+  --secondary-color: #C7D3C0;
+  /* Light Sage */
+  --accent-color: #C8A96B;
+  /* Gold */
+  --bg-color: #F7F4ED;
+  /* Cream */
+  --text-color: #2D2A26;
+  /* Dark Brown */
   --hover-color: #614c21;
+  /* Dark Gold */
 }
 
-.hover\:bg-\[var\(--accent-color\)\]:hover {
-  background-color: var(--accent-color);
+.dark{
+  /* Dark mode - deeper, richer */
+  --primary-color: #A8B8A3;
+  /* Lighter Sage for contrast */
+  --secondary-color: #3A3F37;
+  /* Dark Olive */
+  --accent-color: #E0C084;
+  /* Brighter Gold */
+  --bg-color: #1A1917;
+  /* Deep Charcoal */
+  --text-color: #F7F4ED;
+  /* Your cream as text */
+  --hover-color: #E0C084;
 }
 
 .hover\:bg-\[var\(--hover-color\)\]:hover {
