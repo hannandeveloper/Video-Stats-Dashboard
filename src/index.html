@@ -7,12 +7,16 @@
     <title>Video stats dashboard</title>
     <link rel="stylesheet" href="./output.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
-<!-- //  npx tailwindcss -i ./src/input.css -o ./src/output.css --watch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- //  npx tailwindcss -i ./src/input.css -o ./src/output.css --watch -->
 </head>
 
 <body class=" flex items-center justify-center  flex-col bg-[var(--primary-color)] ">
     <nav class="flex items-center justify-between w-[60%]">
-       <img src="logo.png" alt="logo" class="size-20">
+        <img src="logo.png" alt="logo" class="size-20">
         <p class="text-[var(--text-color)]">Compare YouTube videos stats</p>
         <button class="dark">Enable </button>
     </nav>
@@ -22,10 +26,10 @@
         <input id="url2" type="text" placeholder="Enter URL2" required=""
             class="w-[80%] mt-5 p-4 rounded-md outline-none">
         <button id="URLsubmit"
-            class="cursor-pointer bg-[var(--accent-color)] text-[var(--text-color)] w-32 m-3 h-9  rounded-md hover:bg-[var(--hover-color)] ">Enter <i
-                class="ri-arrow-right-line"></i></button>
+            class="cursor-pointer bg-[var(--accent-color)] text-[var(--text-color)] w-32 m-3 h-9  rounded-md hover:bg-[var(--hover-color)] ">Enter
+            <i class="ri-arrow-right-line"></i></button>
         <div class="w-[50%] flex items-center justify-center mb-4">
-            <label  class="text-[var(--text-color)] ">Need description</label>
+            <label class="text-[var(--text-color)] ">Need description</label>
             <input type="checkbox" id="needDescription" class="ml-3 accent-[var(--accent-color)] h-5 w-5 ">
         </div>
     </main>
@@ -34,6 +38,27 @@
     <section class="flex items-center justify-center ">
         <section class="video1 flex items-center justify-between flex-col sm:flex-row "> </section>
     </section>
+
+      <div class='footer'>
+      <section>
+      <h3 class='logo'>ح</h3>
+      <p class='ver'>version 2.0.0</p>
+      </section>
+      <section class="links">
+        <div class="socialLinks">
+        <p>SOCIAL LINKS</p>
+        <a href="https://github.com/hannandeveloper" target='_blank'>Github</a>
+        <a href="https://www.instagram.com/justt_hannan_/" target='_blank'>Instagram</a>
+        <a href="https://www.linkedin.com/in/hannan-mudassar-69bb24424" target='_blank'>Linkedin</a>
+        <a href="mailto:hannanmudassar498@gmail.com">Email</a>
+        </div>
+        <div class="projectsLinks">
+        <p>PROJECTS LINKS</p>
+        <a href="https://github.com/hannandeveloper/Pass-Nest" target='_blank'>Pass Nest</a>
+        <a href="https://github.com/hannandeveloper/100-cafe" target='_blank'>100 Cafe</a>
+        </div>
+      </section>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <script src="./index.js"></script>

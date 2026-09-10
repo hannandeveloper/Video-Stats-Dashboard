@@ -1,7 +1,7 @@
 {
   "name": "tailwind-css-practice",
   "version": "1.0.0",
-  "description": "",
+  "description": "A minimal, fast web page to compare video performance and visualize key metrics with clean charts.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

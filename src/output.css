@@ -743,6 +743,70 @@ video {
   --hover-color: #E0C084;
 }
 
+.footer {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.ver {
+  opacity: 0.5;
+  margin-left: -16px;
+  margin-top: 20px;
+}
+
+.links {
+  margin-top: 50px;
+  width: 60%;
+  cursor: pointer;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.links p {
+  opacity: 0.5;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.links a {
+  color: var(--primary-color);
+  opacity: 0.5;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  font-size: large;
+}
+
+.logo{
+  font-size: 50px;
+  margin-top: -30px;
+  font-family: 'Noto Nastaliq Urdu', system-ui, -apple-system, sans-serif;
+}
+
+@media (max-width:640px) {
+  .links p {
+    font-size: 16px;
+  }
+
+  .links a {
+    font-size: 12px;
+  }
+}
+
 .hover\:bg-\[var\(--hover-color\)\]:hover {
   background-color: var(--hover-color);
 }
