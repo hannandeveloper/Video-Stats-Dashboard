@@ -727,14 +727,18 @@ video {
 }
 
 :root {
-  --primary-color :#8FA28A;
-  --secondary-color : #C7D3C0;
-  --accent-color : #C8A96B;
-  --text-color : #F7F4ED;
-  --hover-color: #614c21;
+  --primary-color: #000000;
+  /* Solid black for primary buttons, active tabs, and main headers */
+  --secondary-color: #1F150C;
+  /* Ultra-light gray for the main dashboard canvas */
+  --accent-color: #412D15;
+  /* Pure white for card backgrounds to pop against the canvas */
+  --text-color: #E1DCC9;
+  /* Deep slate/charcoal for crisp text that doesn't bleed into pure black elements */
+  --hover-color: #2c1902;
 }
 
-.dark{
+.dark {
   --primary-color: #A8B8A3;
   --secondary-color: #3A3F37;
   --accent-color: #E0C084;
@@ -744,7 +748,7 @@ video {
 }
 
 .footer {
-  color: var(--primary-color);
+  color: var(--text-color);
   background-color: var(--secondary-color);
   display: flex;
   align-items: center;
@@ -776,7 +780,7 @@ video {
 }
 
 .links a {
-  color: var(--primary-color);
+  color: var(--text-color);
   opacity: 0.5;
   text-decoration: none;
   display: block;
@@ -791,7 +795,7 @@ video {
   font-size: large;
 }
 
-.logo{
+.logo {
   font-size: 50px;
   margin-top: -30px;
   font-family: 'Noto Nastaliq Urdu', system-ui, -apple-system, sans-serif;
