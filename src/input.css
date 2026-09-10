@@ -11,7 +11,7 @@
   --hover-color: #2c1902;
 }
 
-.light {
+.lightMode {
   --primary-color: #E1DCC9;
   --secondary-color: #5e3b1d;
   --accent-color: #E0C084;
@@ -72,6 +72,7 @@
   font-size: 50px;
   margin-top: -30px;
   font-family: 'Noto Nastaliq Urdu', system-ui, -apple-system, sans-serif;
+  color: var(--text-color);
 }
 
 

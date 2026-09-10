@@ -169,5 +169,5 @@ const light = document.querySelector(".light")
 
 
 light.addEventListener("click",()=>{
-   document.body.classList.toggle("light")
+   document.body.classList.toggle("lightMode")
 })
