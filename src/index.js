@@ -165,9 +165,9 @@ return new Chart(canvasElement, {
   });
 }
 
-const dark = document.querySelector(".dark")
+const light = document.querySelector(".light")
 
 
-dark.addEventListener("click",()=>{
-   document.body.classList.toggle("dark")
+light.addEventListener("click",()=>{
+   document.body.classList.toggle("light")
 })

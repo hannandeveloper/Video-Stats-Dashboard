@@ -5,22 +5,17 @@
 
 :root {
   --primary-color: #000000;
-  /* Solid black for primary buttons, active tabs, and main headers */
   --secondary-color: #1F150C;
-  /* Ultra-light gray for the main dashboard canvas */
   --accent-color: #412D15;
-  /* Pure white for card backgrounds to pop against the canvas */
   --text-color: #E1DCC9;
-  /* Deep slate/charcoal for crisp text that doesn't bleed into pure black elements */
   --hover-color: #2c1902;
 }
 
-.dark {
-  --primary-color: #A8B8A3;
-  --secondary-color: #3A3F37;
+.light {
+  --primary-color: #E1DCC9;
+  --secondary-color: #5e3b1d;
   --accent-color: #E0C084;
-  --bg-color: #1A1917;
-  --text-color: #F7F4ED;
+  --text-color: #000000;
   --hover-color: #E0C084;
 }
 
